@@ -1,18 +1,30 @@
 import './App.css'
-import CustomerList from './CustomerList'
+import CustomerList from './Customers/CustomerList'
 import Laskuri from './Laskuri'
 import { useState } from 'react'
+import Message from './Message'
 
 function App() {
 
-  // State määrittää näytetäänkö laskuria
+  // Tämä state määrittää näytetäänkö laskuria
   const [showLaskuri, setShowLaskuri] = useState(false)
+
+  // Messageen liittyvät statet
+  const [message, setMessage] = useState("")
+  const [showMessage, setShowMessage] = useState(false)
+  const [isPositive, setIsPositive] = useState(false)
 
   return (
       <div>
         <h2>Northwind Corporation</h2>
 
-        <CustomerList />
+       {showMessage && <Message message={message} isPositive={isPositive} />}
+
+        <CustomerList setMessage={setMessage} setIsPositive={setIsPositive}
+        setShowMessage={setShowMessage} />
+
+
+        <br/>
 
         {
         showLaskuri ? <button onClick={() => setShowLaskuri(false)}>
