@@ -43,7 +43,7 @@ function CustomerList({setIsPositive, setMessage, setShowMessage}) {
 
                 <br />
 
-           {show && !adding && <input type="text" placeholder='Search by Company Name'
+           {show && !adding && <input id="haku" type="text" placeholder='Search by Company Name'
             value={search} onChange={({target}) => setSearch(target.value)}
             /> }
 
@@ -52,7 +52,7 @@ function CustomerList({setIsPositive, setMessage, setShowMessage}) {
 
                 const lowerCaseName = cust.companyName.toLowerCase()
 
-                if (lowerCaseName.indexOf(search) > -1) {
+                if (lowerCaseName.indexOf(search.toLowerCase()) > -1) {
                     return(
                     <Customer key={cust.customerId} customer={cust}
                     setMessage={setMessage} setIsPositive={setIsPositive}

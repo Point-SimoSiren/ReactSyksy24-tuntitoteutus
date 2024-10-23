@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+#haku {
+  min-width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+
 .neg {
   color: red;
   background: lightgrey;
