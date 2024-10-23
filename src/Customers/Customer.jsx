@@ -1,11 +1,15 @@
 import '../App.css'
 import { useState } from 'react'
 import CustomerService from '../Services/Customer'
+import CustomerEdit from './CustomerEdit'
 
 // propsit on otettu vastaan suoraan nimellä suluissa
 const Customer = ({customer, setMessage, setIsPositive, setShowMessage}) => {
+
     // State
     const [showDetails, setShowDetails] = useState(false)
+    const [editing, setEditing] = useState(false)
+
     
     // Poistometodi
     const deleteCustomer = (cust) => {
@@ -57,7 +61,9 @@ const Customer = ({customer, setMessage, setIsPositive, setShowMessage}) => {
 
 
                 {showDetails && <div  className="customerDetails">
-                                <button>Edit</button>
+
+                                <button onClick={() => setEditing(true)}>Edit</button>
+
                                 <button onClick={() => deleteCustomer(customer)}>Delete</button>
                                 <table>
                         <thead>
@@ -79,6 +85,12 @@ const Customer = ({customer, setMessage, setIsPositive, setShowMessage}) => {
                             </tr>
                         </tbody>
                     </table>
+
+                    {editing && <CustomerEdit custToEdit={customer} setEditing={setEditing}
+                    setMessage={setMessage} setIsPositive={setIsPositive}
+                    setShowMessage={setShowMessage}
+                    />}
+
 
                 </div>
                 }
