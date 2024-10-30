@@ -8,14 +8,6 @@ import CustomerAdd from './CustomerAdd'
 // tälle komponentille.
 function CustomerList({setIsPositive, setMessage, setShowMessage}) {
 
-    // useEffect kutsutaan automaattisesti aina alussa
-    // 2. parametrina on tyhjä taulukko: jos sinne laittaa
-    // statejen nimiä, niin niiden statejen muutos myöskin
-    // aiheuttaa 1. param olevan koodin suorituksen
-    useEffect(() => {
-        CustomerService.getAll()
-            .then(data => setCustomers(data)) // asetetaan stateen nimeltä customers
-    }, [])
 
     // State
     const [customers, setCustomers] = useState([])
@@ -24,6 +16,17 @@ function CustomerList({setIsPositive, setMessage, setShowMessage}) {
     // Hakukentän state
     const [search, setSearch] = useState("")
 
+
+    // useEffect kutsutaan automaattisesti aina alussa
+    // 2. parametrina on tyhjä taulukko: jos sinne laittaa
+    // statejen nimiä, niin niiden statejen muutos myöskin
+    // aiheuttaa 1. param olevan koodin suorituksen
+    useEffect(() => {
+        CustomerService.getAll()
+            .then(data => setCustomers(data)) // asetetaan stateen nimeltä customers
+    }, [adding])
+
+   
 
     return (
         <div>

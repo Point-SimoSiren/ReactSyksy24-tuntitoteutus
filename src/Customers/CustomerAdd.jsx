@@ -51,6 +51,8 @@ const handleSubmit = (event) => {
        setTimeout(() => setShowMessage(false),
     4000)
 
+    setAdding(false)
+
       })
       .catch(error => {
           // Näytetään message virhetilanteessakin
@@ -61,6 +63,8 @@ const handleSubmit = (event) => {
        // Messagen piilotus
        setTimeout(() => setShowMessage(false),
     4000)
+    setAdding(false)
+
     }
 
       )
