@@ -34,7 +34,9 @@ const handleSubmit = (event) => {
 
 
       localStorage.setItem("username", response.username)
-      localStorage.setItem("accesslevel", response.accessLevelId)
+      // Alla olevassa oli vielä lähipäivän lopulla virhe oli iso L kirjain
+      // Backendin LoggenInUser luokassa on kuitenkin näin:
+      localStorage.setItem("accesslevel", response.accesslevelId)
       localStorage.setItem("token", response.token)
 
       // Muutetaan APP komponentin loggenIn state trueksi

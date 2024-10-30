@@ -22,6 +22,12 @@ function CustomerList({setIsPositive, setMessage, setShowMessage}) {
     // statejen nimiä, niin niiden statejen muutos myöskin
     // aiheuttaa 1. param olevan koodin suorituksen
     useEffect(() => {
+
+        const token = localStorage.getItem("token")
+        if (token != null) {
+        CustomerService.setToken(token)
+        }
+
         CustomerService.getAll()
             .then(data => setCustomers(data)) // asetetaan stateen nimeltä customers
     }, [adding])

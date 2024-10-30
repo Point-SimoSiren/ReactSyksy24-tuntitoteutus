@@ -54,6 +54,7 @@ const logout = () => {
        {!loggedIn && <Login setMessage={setMessage} setIsPositive={setIsPositive} 
           setShowMessage={setShowMessage} setLoggedIn={setLoggedIn} />}
 
+ {loggedIn &&
        <Routes>
           <Route path="/customers"
           element={<CustomerList setMessage={setMessage} setIsPositive={setIsPositive} 
@@ -69,7 +70,8 @@ const logout = () => {
           element={<Laskuri otsikko={"Laskuri"} />}>
         </Route>
         
-        </Routes>
+        </Routes> }
+        
       </Router>
       </div>
   )
