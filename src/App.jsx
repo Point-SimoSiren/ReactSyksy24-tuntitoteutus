@@ -33,6 +33,8 @@ const logout = () => {
   setLoggedIn(false)
 }
 
+const headerStyle = {color: "blue", backgroundColor: "red"}
+
 
 
   return (
@@ -47,7 +49,11 @@ const logout = () => {
         </Nav>
       </Navbar>
 
-        <h2>Northwind Corporation</h2>
+
+
+        <h2 style={headerStyle}>Northwind Corporation</h2>
+
+
 
        {showMessage && <Message message={message} isPositive={isPositive} />}
 
