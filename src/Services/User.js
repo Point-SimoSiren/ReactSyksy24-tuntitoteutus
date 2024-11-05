@@ -1,8 +1,8 @@
 // Tämä palvelu hoitaa http pyyntöjen tekemisen
 import axios from "axios"
 
-const baseUrl = "https://localhost:7209/api/users"
-const loginUrl = "https://localhost:7209/api/authentication"
+const baseUrl = "https://nwbackendapisimo.azurewebsites.net/api/users"
+const loginUrl = "https://nwbackendapisimo.azurewebsites.net/api/authentication"
 
 
 const Login = (object) => {
