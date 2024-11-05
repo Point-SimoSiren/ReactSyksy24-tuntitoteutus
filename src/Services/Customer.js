@@ -8,6 +8,7 @@ import axios from "axios"
 const baseUrl = "https://nwbackendapisimo.azurewebsites.net/api/customers"
 
 
+
 let token = null
 
 // Tämä on metodi jota kutsutaan aina ennen kuin tehdään muu pyyntö serviceen
@@ -26,17 +27,26 @@ const getAll = () => {
 }
 
 const addNew = (object) => {
-    const request = axios.post(baseUrl, object)
+    const config = {
+        headers: { Authorization: token },
+    }
+    const request = axios.post(baseUrl, object, config)
     return request.then(response => response.data)
 }
 
 const remove = (id) => {
-    const request = axios.delete(baseUrl + "/" + id)
+    const config = {
+        headers: { Authorization: token },
+    }
+    const request = axios.delete(baseUrl + "/" + id, config)
     return request.then(response => response.data)
 }
 
 const edit = (object) => {
-    const request = axios.put(baseUrl + "/" + object.customerId, object)
+    const config = {
+        headers: { Authorization: token },
+    }
+    const request = axios.put(baseUrl + "/" + object.customerId, object, config)
     return request.then(response => response.data)
 }
 
