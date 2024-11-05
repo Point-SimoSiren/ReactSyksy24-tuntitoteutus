@@ -1,7 +1,12 @@
 // Tämä palvelu hoitaa http pyyntöjen tekemisen
 import axios from "axios"
 
-const baseUrl = "https://localhost:7209/api/customers"
+
+//const baseUrl = "https://localhost:7209/api/customers"
+
+// Azure
+const baseUrl = "https://nwbackendapisimo.azurewebsites.net/api/customers"
+
 
 let token = null
 
