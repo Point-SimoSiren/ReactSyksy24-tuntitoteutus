@@ -49,6 +49,7 @@ const edit = (object) => {
     const request = axios.put(baseUrl + "/" + object.customerId, object, config)
     return request.then(response => response.data)
 }
+// jahas
 
 
 export default {getAll, addNew, remove, edit, setToken}
